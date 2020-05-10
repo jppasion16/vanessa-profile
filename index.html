@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/5a62622bfc.js" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="./style/style.css">
     <script src="./js/app.js"></script>
     <title>Vanessa Profile</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
+
 <body>
-    <header class="page-header">
+    <header class="page-header" id="pageHeader">
         <div class="brand">
             <a href="#" class="brand-name">Vanessa Blog</a>
         </div>
         <nav>
             <ul class="nav-list">
                 <li class="list-item">
-                    <a href="#aboutMe">About Me</a>
+                    <a href="javascript:scrollToId('aboutMe')">About Me</a>
                 </li>
                 <li class="list-item">
-                    <a href="#myWorks">My Works</a>
+                    <a href="javascript:scrollToId('myWorks')">My Works</a>
                 </li>
                 <li class="list-item">
-                    <a href="#contanct">Contact Me</a>
+                    <a href="javascript:scrollToId('contactMe')">Contact Me</a>
                 </li>
             </ul>
         </nav>
@@ -37,16 +57,20 @@
             </div>
             <div class="line-border">
                 <div class="social-container">
-                    <a href="https://www.facebook.com/vanessbobadilla" target="_blank" class="link-facebook"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/vanbobadilla" target="_blank" class="link-instagram"><i class="fab fa-instagram-square"></i></a>
+                    <a href="https://www.facebook.com/vanessbobadilla" target="_blank" class="link-facebook"><i
+                            class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/vanbobadilla" target="_blank" class="link-instagram"><i
+                            class="fab fa-instagram-square"></i></a>
                     <a href="#" target="_blank" class="link-twitter"><i class="fab fa-twitter-square"></i></a>
                 </div>
                 <div class="intro-text">
                     <h1>Hi! I'm Vanessa</h1>
-                    <p>Welcome to my blogging page where I post my works. Feel free to browse and know more about me.</p>
+                    <p>Welcome to my blogging page where I post my works. Feel free to browse and know more about me.
+                    </p>
                 </div>
                 <div class="buttons-container">
-                    <button type="button" class="btn-secondary" onclick="window.location.href = '#aboutMe'">Telling you my Story!</button>
+                    <button type="button" class="btn-secondary" onclick="scrollToId('aboutMe')">Telling you
+                        my Story!</button>
                     <button type="button" class="btn-primary">View my Works</button>
                 </div>
             </div>
@@ -56,14 +80,18 @@
                 <div class="col-md-8 col-lg-9 text-about-me">
                     <h1>About Me</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, doloremque. Sequi fugit ipsum odio, quasi nesciunt id harum amet enim veniam beatae quos neque eveniet obcaecati doloribus. Deleniti quos inventore temporibus consectetur. Odit ducimus dolore voluptas tempore nihil rerum molestiae debitis sunt asperiores necessitatibus. Praesentium facere error architecto ipsum qui!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, doloremque. Sequi fugit
+                        ipsum odio, quasi nesciunt id harum amet enim veniam beatae quos neque eveniet obcaecati
+                        doloribus. Deleniti quos inventore temporibus consectetur. Odit ducimus dolore voluptas tempore
+                        nihil rerum molestiae debitis sunt asperiores necessitatibus. Praesentium facere error
+                        architecto ipsum qui!
                     </p>
                 </div>
                 <div class="col-md-4 col-lg-3 img-about-me">
                     <img src="./svg/girl-art-lover.svg" alt="about me">
                 </div>
             </div>
-            
+
             <div id="aboutMeHobby">
                 <h2>My Hobbies</h2>
                 <div class="row hobby-container">
@@ -77,24 +105,48 @@
                     </div>
                     <div class="col-md-9 hobby-item-container">
                         <div class="hobby-item active">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dolores deleniti molestias error autem obcaecati animi deserunt, eos quae architecto porro vitae ipsum aliquid, accusantium veritatis recusandae, incidunt perspiciatis quis! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto suscipit, rem quo reprehenderit doloribus qui unde vero soluta delectus illo nisi dolore esse amet neque maiores consequuntur exercitationem id voluptatum? Aspernatur eligendi quidem accusantium fugit quae exercitationem sunt consequuntur omnis quaerat! Excepturi iure porro qui? Alias possimus illum cumque. Non beatae esse sequi quos et modi, nobis debitis maxime totam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dolores deleniti molestias
+                                error autem obcaecati animi deserunt, eos quae architecto porro vitae ipsum aliquid,
+                                accusantium veritatis recusandae, incidunt perspiciatis quis! Lorem, ipsum dolor sit
+                                amet consectetur adipisicing elit. Architecto suscipit, rem quo reprehenderit doloribus
+                                qui unde vero soluta delectus illo nisi dolore esse amet neque maiores consequuntur
+                                exercitationem id voluptatum? Aspernatur eligendi quidem accusantium fugit quae
+                                exercitationem sunt consequuntur omnis quaerat! Excepturi iure porro qui? Alias possimus
+                                illum cumque. Non beatae esse sequi quos et modi, nobis debitis maxime totam.</p>
                             <button type="button" class="btn-primary">View Works</button>
                         </div>
                         <div class="hobby-item">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut maxime ab odio ullam ipsum deleniti harum! Quas quae voluptas nulla.</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut maxime ab odio ullam ipsum
+                                deleniti harum! Quas quae voluptas nulla.</p>
                             <button type="button" class="btn-primary">View Works</button>
                         </div>
                         <div class="hobby-item">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non earum ducimus porro quisquam rem optio aut. Quam laudantium aperiam perferendis, sapiente ab nihil deserunt nulla, reiciendis facilis, repellat consequatur. Magnam iste reiciendis quasi repellat quis eos, deleniti fuga minus alias quas illum quo eum, quod assumenda. Soluta omnis magni dolorem.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non earum ducimus porro
+                                quisquam rem optio aut. Quam laudantium aperiam perferendis, sapiente ab nihil deserunt
+                                nulla, reiciendis facilis, repellat consequatur. Magnam iste reiciendis quasi repellat
+                                quis eos, deleniti fuga minus alias quas illum quo eum, quod assumenda. Soluta omnis
+                                magni dolorem.</p>
                             <button type="button" class="btn-primary">View Recommendations</button>
                         </div>
                         <div class="hobby-item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit tempore id quas dicta ipsam repudiandae deleniti praesentium voluptatem neque facere repellat, suscipit ea labore accusamus esse explicabo voluptatum magnam debitis enim tempora? Dignissimos rerum fugit cum veritatis possimus soluta aspernatur inventore voluptatibus est doloremque iusto, recusandae impedit repudiandae praesentium nam quisquam repellendus delectus in aliquid ea numquam omnis sint ratione. A alias dignissimos et laborum laboriosam. Soluta sequi ut quae.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit tempore id quas dicta
+                                ipsam repudiandae deleniti praesentium voluptatem neque facere repellat, suscipit ea
+                                labore accusamus esse explicabo voluptatum magnam debitis enim tempora? Dignissimos
+                                rerum fugit cum veritatis possimus soluta aspernatur inventore voluptatibus est
+                                doloremque iusto, recusandae impedit repudiandae praesentium nam quisquam repellendus
+                                delectus in aliquid ea numquam omnis sint ratione. A alias dignissimos et laborum
+                                laboriosam. Soluta sequi ut quae.</p>
                             <button type="button" class="btn-primary">View Photos</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="contact-me" id="myWorks">
+
+        </section>
+        <section class="contact-me" id="contactMe">
+
         </section>
     </main>
 
@@ -107,11 +159,11 @@
                     console.log(`clicked idx: ${listIdx}`);
                     hobbyItem.forEach((itemElem, itemIdx) => {
                         let itemClsList = itemElem.classList;
-                        if(listIdx == itemIdx){
+                        if (listIdx == itemIdx) {
                             itemClsList.add("active");
                             hobbyList[itemIdx].classList.add("active");
                         }
-                        else{
+                        else {
                             itemClsList.remove("active");
                             hobbyList[itemIdx].classList.remove("active");
                         }
@@ -119,6 +171,12 @@
                 });
             });
         });
+
+        function scrollToId(elemId = "pageHeader") {
+            elem = document.getElementById(elemId);
+            elem.scrollIntoView();
+        }
     </script>
 </body>
+
 </html>
