@@ -1,0 +1,294 @@
+@import './variables';
+@import './mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: $fontFamDefault;
+    font-weight: $fontWgtDefault;
+}
+
+body{
+    background-image: linear-gradient(#fb3f79, #fea49c);
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #3a3a3a;
+}
+
+a{
+    text-decoration: none;
+    color: $colorPrimary;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s ease;
+    &.btn-primary{
+        background-color: $colorPrimary;
+        color: white;
+    }
+    &.btn-secondary{
+        background-color: white;
+        border: 3px solid $colorPrimary;
+        color: $colorPrimary;
+        &:hover{
+            color: white;
+            border: 3px solid $colorPrimary;
+            background-color: $colorPrimary;
+        }
+    }
+}
+
+.col{
+    flex: 1;
+    @include gridSystem();
+    &-xs, &-sm, &-md, &-lg, &-xl{
+        flex: 1;
+    }
+    &-xs{
+        @include mediaQuery($xs){
+            @include gridSystem();
+        }
+    }
+    &-sm{
+        @include mediaQuery(0){
+            @include gridSystemAllFull();
+        }
+        @include mediaQuery($sm){
+            @include gridSystem();
+        }
+    }
+    &-md{
+        @include mediaQuery(0){
+            @include gridSystemAllFull();
+        }
+        @include mediaQuery($md){
+            @include gridSystem();
+        }
+    }
+    &-lg{
+        @include mediaQuery(0){
+            @include gridSystemAllFull();
+        }
+        @include mediaQuery($lg){
+            @include gridSystem();
+        }
+    }
+    &-xl{
+        @include mediaQuery(0){
+            @include gridSystemAllFull();
+        }
+        @include mediaQuery($xl){
+            @include gridSystem();
+        }
+    }
+}
+
+.page-header{
+    display: flex;
+    width: 90%;
+    min-height: 10vh;
+    margin: auto;
+    align-items: center;
+    .brand{
+        flex: 1;
+        .brand-name{
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+    nav .nav-list{
+        display: flex;
+        list-style-type: none;
+        .list-item{
+            font-weight: 400;
+            margin-left: 30px;
+            a{
+                color: white;
+                padding: 10px 0;
+                &:hover{
+                    border-bottom: 3px solid white;
+                }
+            }
+        }
+    }
+}
+.introduction{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px 0;
+    min-height: 90vh;
+    flex-shrink: 0;
+    .img-container{
+        @include flexCenter(column);
+        border-radius: 50%;
+        border: 10px solid white;
+        height: 200px;
+        width: 200px;
+        overflow: hidden;
+        z-index: 2;
+        img{
+            height: 180px;
+        }
+    }
+    .line-border{
+        @include flexCenter(column);
+        background-color: white;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 20px;
+        padding: 100px 0 20px;
+        margin-top: -100px;
+        box-shadow: 0 4px 4px -4px #000;
+        .social-container{
+            font-size: 50px;
+            cursor: default;
+            a{
+                color: $colorPrimary;
+                margin: 0 10px;
+                line-height: 0;
+                display: inline-block;
+                transition: 0.3s ease;
+                &:hover{
+                    color: $colorPrimary;
+                }
+                &.link-facebook:hover{
+                    color: #4267B2;
+                }
+                &.link-instagram:hover{
+                    color: #8a3ab9;
+                }
+                &.link-twitter:hover{
+                    color: #00acee;
+                }
+            }
+        }
+        .intro-text{
+            padding: 0 $paddingDefault;
+            text-align: center;
+            h1{
+                font-weight: bold;
+                color: #3a3a3a;
+                font-size: 50px;
+            }
+            p{
+                max-width: 500px;
+            }
+        }
+        .buttons-container{
+            display: flex;
+            margin-top: 20px;
+            button{
+                margin: 10px;
+            }
+        }
+    }
+    
+}
+
+.about-me{
+    background-color: white;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 0;
+    &>div{
+        width: 80%;
+        margin: auto;
+        display: flex;
+    }
+    h1{
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    ul{
+        list-style-type: none;
+    }
+    #aboutMeIntro{
+        .text-about-me{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .img-about-me{
+            @include flexCenter(column);
+        }
+    }
+    #aboutMeHobby{
+        flex-direction: column;
+        padding: $paddingDefault $paddingDefault 0;
+        .hobby-container{
+            border-top: 5px solid $colorPrimary
+        }
+        .hobby-list-container{
+            padding: 0;
+            ul{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                li{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: $colorPrimary_opacity;
+                    color: white;
+                    user-select: none;
+                    cursor: pointer;
+                    margin-right: $paddingDefault;
+                    padding: $paddingDefault;
+                    height: 70px;
+                    line-height: 1rem;
+                    transition: 0.3s ease;
+                    &:hover, &.active{
+                        background-color: $colorPrimary;
+                    }
+                    &.active{
+                        border-radius: 0 10px 10px 0;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .hobby-item-container{
+            padding: $paddingDefault 0 0 $paddingDefault;
+            .hobby-item{
+                display: none;
+                &.active{
+                    min-height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    border-bottom: 5px solid $colorPrimary;
+                    padding-right: $paddingDefault;
+                    padding-bottom: $paddingDefault;
+                    button{
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

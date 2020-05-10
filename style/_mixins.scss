@@ -1,0 +1,50 @@
+@mixin mediaQuery($size){
+    @media only screen and (min-width: $size){
+        @content;
+    }
+}
+
+@mixin gridSystem(){
+    &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9, &-10, &-11, &-12{
+        padding: $paddingDefault;
+        flex-shrink: 0;
+    }
+    &-1{ width: 8.333333% !important; }
+    &-2{ width: 16.666667% !important; }
+    &-3{ width: 25% !important; }
+    &-4{ width: 33.333333% !important; }
+    &-5{ width: 41.666667% !important; }
+    &-6{ width: 50% !important; }
+    &-7{ width: 58.333333% !important; }
+    &-8{ width: 66.666667% !important; }
+    &-9{ width: 75% !important; }
+    &-10{ width: 83.333333% !important; }
+    &-11{ width: 91.666667% !important; }
+    &-12{ width: 100% !important; }
+}
+
+@mixin gridSystemAllFull(){
+    &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9, &-10, &-11, &-12{
+        padding: $paddingDefault;
+        flex-shrink: 0;
+    }
+    &-1{ width: 100%; }
+    &-2{ width: 100%; }
+    &-3{ width: 100%; }
+    &-4{ width: 100%; }
+    &-5{ width: 100%; }
+    &-6{ width: 100%; }
+    &-7{ width: 100%; }
+    &-8{ width: 100%; }
+    &-9{ width: 100%; }
+    &-10{ width: 100%; }
+    &-11{ width: 100%; }
+    &-12{ width: 100%; }
+}
+
+@mixin flexCenter($direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
