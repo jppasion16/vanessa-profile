@@ -14,20 +14,20 @@
 </head>
 
 <body>
-    <header class="page-header">
+    <header class="page-header" id="pageHeader">
         <div class="brand">
             <a href="#" class="brand-name">Vanessa Blog</a>
         </div>
         <nav>
             <ul class="nav-list">
                 <li class="list-item">
-                    <a href="#aboutMe">About Me</a>
+                    <a href="javascript:scrollToId('aboutMe')">About Me</a>
                 </li>
                 <li class="list-item">
-                    <a href="#myWorks">My Works</a>
+                    <a href="javascript:scrollToId('myWorks')">My Works</a>
                 </li>
                 <li class="list-item">
-                    <a href="#contanct">Contact Me</a>
+                    <a href="javascript:scrollToId('contactMe')">Contact Me</a>
                 </li>
             </ul>
         </nav>
@@ -51,7 +51,7 @@
                     </p>
                 </div>
                 <div class="buttons-container">
-                    <button type="button" class="btn-secondary" onclick="window.location.href = '#aboutMe'">Telling you
+                    <button type="button" class="btn-secondary" onclick="scrollToId('aboutMe')">Telling you
                         my Story!</button>
                     <button type="button" class="btn-primary">View my Works</button>
                 </div>
@@ -124,6 +124,9 @@
                 </div>
             </div>
         </section>
+        <section class="contact-me" id="myWorks">
+
+        </section>
         <section class="contact-me" id="contactMe">
 
         </section>
@@ -150,6 +153,11 @@
                 });
             });
         });
+
+        function scrollToId(elemId = "pageHeader") {
+            elem = document.getElementById(elemId);
+            elem.scrollIntoView();
+        }
     </script>
 </body>
 
