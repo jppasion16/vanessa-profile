@@ -5,8 +5,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: none;
     scroll-behavior: smooth;
+    outline: none;
+    user-select: none;
+    outline-style:none;
+    -webkit-tap-highlight-color: transparent;
     font-family: $fontFamDefault;
     font-weight: $fontWgtDefault;
 }
@@ -107,7 +110,8 @@ button{
 .page-header{
     display: flex;
     width: 90%;
-    min-height: 10vh;
+    height: 10vh;
+    min-height: 60px;
     margin: auto;
     align-items: center;
     .brand{
@@ -118,17 +122,99 @@ button{
             font-weight: 500;
         }
     }
-    nav .nav-list{
-        display: flex;
-        list-style-type: none;
-        .list-item{
-            font-weight: 400;
-            margin-left: 30px;
-            a{
-                color: white;
-                padding: 10px 0;
+    nav{
+        &.nav-burger{
+            .icon-burger{
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                padding: 10px;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                z-index: 4;
+                .burger-line{
+                    background-color: white;
+                    height: 4px;
+                    width: 25px;
+                    transition: transform .5s ease;
+                }
                 &:hover{
-                    border-bottom: 3px solid white;
+                    background-color: rgba(0,0,0,0.1);
+                }
+                &.nav-active .burger-line{
+                    visibility: hidden;
+                    &:first-child{
+                        visibility: visible;
+                        transform: rotate(45deg) translate(7px, 7.3px);
+                    }
+                    &:last-child{
+                        visibility: visible;
+                        transform: rotate(-45deg) translate(7px, -7.3px);
+                    }
+                }
+            }
+            .nav-list{
+                position: absolute;
+                top: 10vh;
+                left: 0;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                list-style-type: none;
+                transition: max-height 1s ease-in-out;
+                &.nav-active{
+                    max-height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 3;
+                    background-color: #fb3f79cc;
+                    .list-item{
+                        display: flex;
+                        text-align: center;
+                        font-weight: 400;
+                        width: 100%;
+                        a{
+                            display: block;
+                            width: 100%;
+                            padding: 20px 0;
+                            color: white;
+                        }
+                        &:hover{
+                            font-weight: bold;
+                            background-color: #ec2564cc;
+                        }
+                    }
+                }
+            }
+            @include mediaQuery($sm){
+                .icon-burger, .icon-burger::before, .icon-burger::after{
+                    display: none;
+                }
+                .nav-list{
+                    position: static;
+                    top: auto;
+                    left: auto;
+                    display: flex;
+                    width: auto;
+                    height: auto;
+                    max-height: 100%;
+                    overflow: unset;
+                    .list-item{
+                        font-weight: 400;
+                        margin-left: 30px;
+                        a{
+                            color: white;
+                            padding: 10px 0;
+                            &:hover{
+                                border-bottom: 3px solid white;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -36,8 +36,13 @@
         <div class="brand">
             <a href="#" class="brand-name">Vanessa Blog</a>
         </div>
-        <nav>
-            <ul class="nav-list">
+        <nav class="nav-burger">
+            <div class="icon-burger" id="iconBurger" data-toggle="navList">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="nav-list" id="navList">
                 <li class="list-item">
                     <a href="javascript:scrollToId('aboutMe')">About Me</a>
                 </li>
@@ -61,7 +66,8 @@
                             class="fab fa-facebook-square"></i></a>
                     <a href="https://www.instagram.com/vanbobadilla" target="_blank" class="link-instagram"><i
                             class="fab fa-instagram-square"></i></a>
-                    <a href="#" target="_blank" class="link-twitter"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://twitter.com/vanessshh" target="_blank" class="link-twitter"><i
+                            class="fab fa-twitter-square"></i></a>
                 </div>
                 <div class="intro-text">
                     <h1>Hi! I'm Vanessa</h1>
@@ -152,6 +158,36 @@
 
     <script>
         window.addEventListener("load", () => {
+            // for header
+            const iconBurger = document.getElementById("iconBurger");
+            if (iconBurger !== null) {
+                const dataToggleID = iconBurger.getAttribute("data-toggle");
+                const navList = document.getElementById(dataToggleID);
+                const navAnchors = document.querySelectorAll(`#${dataToggleID} a`);
+                const classToggle = "nav-active";
+
+                iconBurger.addEventListener("click", () => {
+                    if (navList.classList.contains(classToggle)) {
+                        navList.classList.remove(classToggle);
+                        iconBurger.classList.remove(classToggle);
+                        enableScroll();
+                    }
+                    else {
+                        navList.classList.add(classToggle);
+                        iconBurger.classList.add(classToggle);
+                        disableScroll();
+                    }
+                });
+
+                navAnchors.forEach(navAnchor => {
+                    navAnchor.addEventListener("click", () => {
+                        navList.classList.remove(classToggle);
+                        iconBurger.classList.remove(classToggle);
+                        enableScroll();
+                    });
+                });
+            }
+
             const hobbyList = document.querySelectorAll(".hobby-list-container ul li");
             const hobbyItem = document.querySelectorAll(".hobby-item-container .hobby-item");
             hobbyList.forEach((listElem, listIdx) => {
