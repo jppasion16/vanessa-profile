@@ -4,8 +4,14 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  outline: none;
   scroll-behavior: smooth;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline-style: none;
+  -webkit-tap-highlight-color: transparent;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
@@ -533,7 +539,8 @@ button.btn-secondary:hover {
   display: -ms-flexbox;
   display: flex;
   width: 90%;
-  min-height: 10vh;
+  height: 10vh;
+  min-height: 60px;
   margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -552,25 +559,136 @@ button.btn-secondary:hover {
   font-weight: 500;
 }
 
-.page-header nav .nav-list {
+.page-header nav.nav-burger .icon-burger {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  z-index: 4;
+}
+
+.page-header nav.nav-burger .icon-burger .burger-line {
+  background-color: white;
+  height: 4px;
+  width: 25px;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+.page-header nav.nav-burger .icon-burger:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.page-header nav.nav-burger .icon-burger.nav-active .burger-line {
+  visibility: hidden;
+}
+
+.page-header nav.nav-burger .icon-burger.nav-active .burger-line:first-child {
+  visibility: visible;
+  -webkit-transform: rotate(45deg) translate(7px, 7.3px);
+          transform: rotate(45deg) translate(7px, 7.3px);
+}
+
+.page-header nav.nav-burger .icon-burger.nav-active .burger-line:last-child {
+  visibility: visible;
+  -webkit-transform: rotate(-45deg) translate(7px, -7.3px);
+          transform: rotate(-45deg) translate(7px, -7.3px);
+}
+
+.page-header nav.nav-burger .nav-list {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
   list-style-type: none;
+  -webkit-transition: max-height 1s ease-in-out;
+  transition: max-height 1s ease-in-out;
 }
 
-.page-header nav .nav-list .list-item {
+.page-header nav.nav-burger .nav-list.nav-active {
+  max-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 3;
+  background-color: #fb3f79cc;
+}
+
+.page-header nav.nav-burger .nav-list.nav-active .list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
   font-weight: 400;
-  margin-left: 30px;
+  width: 100%;
 }
 
-.page-header nav .nav-list .list-item a {
+.page-header nav.nav-burger .nav-list.nav-active .list-item a {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
   color: white;
-  padding: 10px 0;
 }
 
-.page-header nav .nav-list .list-item a:hover {
-  border-bottom: 3px solid white;
+.page-header nav.nav-burger .nav-list.nav-active .list-item:hover {
+  font-weight: bold;
+  background-color: #ec2564cc;
+}
+
+@media only screen and (min-width: 576px) {
+  .page-header nav.nav-burger .icon-burger, .page-header nav.nav-burger .icon-burger::before, .page-header nav.nav-burger .icon-burger::after {
+    display: none;
+  }
+  .page-header nav.nav-burger .nav-list {
+    position: static;
+    top: auto;
+    left: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    overflow: unset;
+  }
+  .page-header nav.nav-burger .nav-list .list-item {
+    font-weight: 400;
+    margin-left: 30px;
+  }
+  .page-header nav.nav-burger .nav-list .list-item a {
+    color: white;
+    padding: 10px 0;
+  }
+  .page-header nav.nav-burger .nav-list .list-item a:hover {
+    border-bottom: 3px solid white;
+  }
 }
 
 .introduction {
