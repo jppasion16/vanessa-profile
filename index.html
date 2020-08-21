@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/5a62622bfc.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./style/style.css">
-    <script src="./js/app.js"></script>
+    <script src="./js/index.js"></script>
     <title>Vanessa Profile</title>
 
     <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
@@ -103,10 +103,10 @@
                 <div class="row hobby-container">
                     <div class="col-md-3 hobby-list-container">
                         <ul>
-                            <li class="active">Lettering</li>
-                            <li>Content Writing</li>
+                            <li class="active">Calligraphy</li>
+                            <li>Watercolor Painting</li>
+                            <li>Scrapbook Making</li>
                             <li>Reading</li>
-                            <li>Photography</li>
                         </ul>
                     </div>
                     <div class="col-md-9 hobby-item-container">
@@ -132,7 +132,7 @@
                                 nulla, reiciendis facilis, repellat consequatur. Magnam iste reiciendis quasi repellat
                                 quis eos, deleniti fuga minus alias quas illum quo eum, quod assumenda. Soluta omnis
                                 magni dolorem.</p>
-                            <button type="button" class="btn-primary">View Recommendations</button>
+                            <button type="button" class="btn-primary">View Works</button>
                         </div>
                         <div class="hobby-item">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit tempore id quas dicta
@@ -142,7 +142,7 @@
                                 doloremque iusto, recusandae impedit repudiandae praesentium nam quisquam repellendus
                                 delectus in aliquid ea numquam omnis sint ratione. A alias dignissimos et laborum
                                 laboriosam. Soluta sequi ut quae.</p>
-                            <button type="button" class="btn-primary">View Photos</button>
+                            <button type="button" class="btn-primary">View Recommendations</button>
                         </div>
                     </div>
                 </div>
@@ -155,64 +155,6 @@
 
         </section>
     </main>
-
-    <script>
-        window.addEventListener("load", () => {
-            // for header
-            const iconBurger = document.getElementById("iconBurger");
-            if (iconBurger !== null) {
-                const dataToggleID = iconBurger.getAttribute("data-toggle");
-                const navList = document.getElementById(dataToggleID);
-                const navAnchors = document.querySelectorAll(`#${dataToggleID} a`);
-                const classToggle = "nav-active";
-
-                iconBurger.addEventListener("click", () => {
-                    if (navList.classList.contains(classToggle)) {
-                        navList.classList.remove(classToggle);
-                        iconBurger.classList.remove(classToggle);
-                        enableScroll();
-                    }
-                    else {
-                        navList.classList.add(classToggle);
-                        iconBurger.classList.add(classToggle);
-                        disableScroll();
-                    }
-                });
-
-                navAnchors.forEach(navAnchor => {
-                    navAnchor.addEventListener("click", () => {
-                        navList.classList.remove(classToggle);
-                        iconBurger.classList.remove(classToggle);
-                        enableScroll();
-                    });
-                });
-            }
-
-            const hobbyList = document.querySelectorAll(".hobby-list-container ul li");
-            const hobbyItem = document.querySelectorAll(".hobby-item-container .hobby-item");
-            hobbyList.forEach((listElem, listIdx) => {
-                listElem.addEventListener("click", () => {
-                    console.log(`clicked idx: ${listIdx}`);
-                    hobbyItem.forEach((itemElem, itemIdx) => {
-                        let itemClsList = itemElem.classList;
-                        if (listIdx == itemIdx) {
-                            itemClsList.add("active");
-                            hobbyList[itemIdx].classList.add("active");
-                        }
-                        else {
-                            itemClsList.remove("active");
-                            hobbyList[itemIdx].classList.remove("active");
-                        }
-                    });
-                });
-            });
-        });
-
-        function scrollToId(elemId = "pageHeader") {
-            elem = document.getElementById(elemId);
-            elem.scrollIntoView();
-        }
-    </script>
 </body>
 
 </html>
