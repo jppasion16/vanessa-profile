@@ -16,18 +16,39 @@
   font-weight: 300;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #ccc;
+          box-shadow: inset 0 0 5px #ccc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fea49caa;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fea49c;
+}
+
 body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fb3f79), to(#fea49c));
   background-image: linear-gradient(#fb3f79, #fea49c);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   color: #3a3a3a;
 }
 
 a {
   text-decoration: none;
-  color: #fb3c6d;
+  color: #fb3f79;
 }
 
 img {
@@ -56,20 +77,20 @@ button {
 }
 
 button.btn-primary {
-  background-color: #fb3c6d;
+  background-color: #fb3f79;
   color: white;
 }
 
 button.btn-secondary {
   background-color: white;
-  border: 3px solid #fb3c6d;
-  color: #fb3c6d;
+  border: 3px solid #fb3f79;
+  color: #fb3f79;
 }
 
 button.btn-secondary:hover {
   color: white;
-  border: 3px solid #fb3c6d;
-  background-color: #fb3c6d;
+  border: 3px solid #fb3f79;
+  background-color: #fb3f79;
 }
 
 .col {
@@ -534,13 +555,21 @@ button.btn-secondary:hover {
   }
 }
 
+.title {
+  display: block;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
 .page-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 90%;
-  height: 10vh;
-  min-height: 60px;
+  height: 60px;
   margin: auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -612,7 +641,7 @@ button.btn-secondary:hover {
 
 .page-header nav.nav-burger .nav-list {
   position: absolute;
-  top: 10vh;
+  top: 60px;
   left: 0;
   width: 100%;
   max-height: 0;
@@ -638,7 +667,7 @@ button.btn-secondary:hover {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 3;
-  background-color: #fb3f79cc;
+  background-color: white;
 }
 
 .page-header nav.nav-burger .nav-list.nav-active .list-item {
@@ -648,18 +677,26 @@ button.btn-secondary:hover {
   text-align: center;
   font-weight: 400;
   width: 100%;
+  -webkit-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
 }
 
 .page-header nav.nav-burger .nav-list.nav-active .list-item a {
   display: block;
   width: 100%;
-  padding: 20px 0;
+  padding: 15px 0;
+  color: #fb3f79;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+.page-header nav.nav-burger .nav-list.nav-active .list-item a:hover {
   color: white;
 }
 
 .page-header nav.nav-burger .nav-list.nav-active .list-item:hover {
   font-weight: bold;
-  background-color: #ec2564cc;
+  background-color: #fb3f79;
 }
 
 @media only screen and (min-width: 576px) {
@@ -706,7 +743,7 @@ button.btn-secondary:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 10px 0;
-  min-height: 90vh;
+  min-height: calc(100vh - 60px);
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -767,7 +804,7 @@ button.btn-secondary:hover {
 }
 
 .introduction .line-border .social-container a {
-  color: #fb3c6d;
+  color: #fb3f79;
   margin: 0 10px;
   line-height: 0;
   display: inline-block;
@@ -776,7 +813,7 @@ button.btn-secondary:hover {
 }
 
 .introduction .line-border .social-container a:hover {
-  color: #fb3c6d;
+  color: #fb3f79;
 }
 
 .introduction .line-border .social-container a.link-facebook:hover {
@@ -825,11 +862,17 @@ button.btn-secondary:hover {
 }
 
 .about-me > div {
-  width: 80%;
+  width: 90%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-me > div {
+    width: 80%;
+  }
 }
 
 .about-me h1 {
@@ -880,25 +923,16 @@ button.btn-secondary:hover {
 }
 
 .about-me #aboutMeHobby .hobby-container {
-  border-top: 5px solid #fb3c6d;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  row-gap: 20px;
 }
 
-.about-me #aboutMeHobby .hobby-list-container {
-  padding: 0;
-}
-
-.about-me #aboutMeHobby .hobby-list-container ul {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.about-me #aboutMeHobby .hobby-list-container ul li {
+.about-me #aboutMeHobby .hobby-container div.card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -909,56 +943,53 @@ button.btn-secondary:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #fb3c6daa;
-  color: white;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-  margin-right: 15px;
-  padding: 15px;
-  height: 70px;
-  line-height: 1rem;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-box-shadow: 0 0 6px -2px #000;
+          box-shadow: 0 0 6px -2px #000;
 }
 
-.about-me #aboutMeHobby .hobby-list-container ul li:hover, .about-me #aboutMeHobby .hobby-list-container ul li.active {
-  background-color: #fb3c6d;
+.about-me #aboutMeHobby .hobby-container div.card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  height: 200px;
+  -webkit-filter: brightness(0.8);
+          filter: brightness(0.8);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.about-me #aboutMeHobby .hobby-list-container ul li.active {
-  border-radius: 0 10px 10px 0;
-  margin: 0;
-}
-
-.about-me #aboutMeHobby .hobby-item-container {
-  padding: 15px 0 0 15px;
-}
-
-.about-me #aboutMeHobby .hobby-item-container .hobby-item {
-  display: none;
-}
-
-.about-me #aboutMeHobby .hobby-item-container .hobby-item.active {
-  min-height: 100%;
+.about-me #aboutMeHobby .hobby-container div.card .card-desc {
+  padding: 5px 5px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  border-bottom: 5px solid #fb3c6d;
-  padding-right: 15px;
-  padding-bottom: 15px;
 }
 
-.about-me #aboutMeHobby .hobby-item-container .hobby-item.active button {
-  margin-top: 20px;
+.about-me #aboutMeHobby .hobby-container div.card .card-desc button {
+  background-color: #fb3f79;
+  color: white;
+  width: 100px;
+  margin-top: 40px;
+}
+
+.about-me #aboutMeHobby .hobby-container div.card:hover {
+  -webkit-box-shadow: 0 0 10px -2px #000;
+          box-shadow: 0 0 10px -2px #000;
+}
+
+.about-me #aboutMeHobby .hobby-container div.card:hover img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
 }
 /*# sourceMappingURL=style.css.map */

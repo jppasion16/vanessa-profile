@@ -32,23 +32,15 @@ window.addEventListener("load", () => {
         });
     }
 
-    const hobbyList = document.querySelectorAll(".hobby-list-container ul li");
-    const hobbyItem = document.querySelectorAll(".hobby-item-container .hobby-item");
-    hobbyList.forEach((listElem, listIdx) => {
-        listElem.addEventListener("click", () => {
-            console.log(`clicked idx: ${listIdx}`);
-            hobbyItem.forEach((itemElem, itemIdx) => {
-                let itemClsList = itemElem.classList;
-                if (listIdx == itemIdx) {
-                    itemClsList.add("active");
-                    hobbyList[itemIdx].classList.add("active");
-                }
-                else {
-                    itemClsList.remove("active");
-                    hobbyList[itemIdx].classList.remove("active");
-                }
-            });
-        });
+    // scroll top
+    const pageHeader = document.getElementById("pageHeader");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY != 0 && !pageHeader.classList.contains("shrink")) {
+            pageHeader.classList.add("shrink");
+        }
+        else if (window.scrollY == 0) {
+            pageHeader.classList.remove("shrink");
+        }
     });
 });
 
