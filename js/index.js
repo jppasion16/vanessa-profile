@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
 
 function scrollToId(elemId = "pageHeader") {
     elem = document.getElementById(elemId);
-    elem.scrollIntoView();
+    if (elem !== undefined || elem !== null) elem.scrollIntoView();
 }
 
 // left: 37, up: 38, right: 39, down: 40,

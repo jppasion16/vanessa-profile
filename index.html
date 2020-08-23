@@ -82,15 +82,20 @@
             </div>
         </section>
         <section class="about-me" id="aboutMe">
+            <p class="title">About Me</p>
             <div class="row" id="aboutMeIntro">
                 <div class="col-md-8 col-lg-9 text-about-me">
-                    <h1>About Me</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, doloremque. Sequi fugit
                         ipsum odio, quasi nesciunt id harum amet enim veniam beatae quos neque eveniet obcaecati
                         doloribus. Deleniti quos inventore temporibus consectetur. Odit ducimus dolore voluptas tempore
                         nihil rerum molestiae debitis sunt asperiores necessitatibus. Praesentium facere error
                         architecto ipsum qui!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum vitae maxime necessitatibus
+                        libero, perferendis neque quod culpa quasi, officia optio reprehenderit distinctio delectus
+                        magni quibusdam cupiditate earum, consequuntur quaerat autem!
                     </p>
                 </div>
                 <div class="col-md-4 col-lg-3 img-about-me">
@@ -99,19 +104,13 @@
             </div>
 
             <div id="aboutMeHobby">
-                <p class="title">My Hobbies</p>
+                <!-- <p class="title">My Hobbies</p> -->
                 <div class="hobby-container">
-                    <!--
-                        <li class="active">Calligraphy</li>
-                        <li>Watercolor Painting</li>
-                        <li>Scrapbook Making</li>
-                        <li>Reading</li>
-                    -->
                     <div class="card">
                         <img src="./img/calligraphy/featured.jpg" alt="calligraphy">
                         <div class="card-desc">
                             <h3 class="card-title">Calligraphy</h3>
-                            <button class="card-btn">View</button>
+                            <button class="card-btn" onclick="javascript:scrollToId('workCalligraphy')">View</button>
                         </div>
 
                     </div>
@@ -119,28 +118,78 @@
                         <img src="./img/watercolor/featured.jpg" alt="watercolor">
                         <div class="card-desc">
                             <h3 class="card-title">Watercolor Painting</h3>
-                            <button class="card-btn">View</button>
+                            <button class="card-btn" onclick="javascript:scrollToId('workWatercolor')">View</button>
                         </div>
                     </div>
                     <div class="card">
                         <img src="./img/scrapbook/featured.jpg" alt="scrapbook">
                         <div class="card-desc">
                             <h3 class="card-title">Scrapbook Making</h3>
-                            <button class="card-btn">View</button>
+                            <button class="card-btn" onclick="javascript:scrollToId('workScrapbook')">View</button>
                         </div>
                     </div>
                     <div class="card">
-                        <img src="./img/reading/featured.jpg" alt="reading">
+                        <img src="./img/artcraft/featured.jpg" alt="arts and crafts">
                         <div class="card-desc">
-                            <h3 class="card-title">Reading</h3>
-                            <button class="card-btn">View</button>
+                            <h3 class="card-title">Other Arts and Crafts</h3>
+                            <button class="card-btn" onclick="javascript:scrollToId('workArtcraft')">View</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="contact-me" id="myWorks">
+        <section class="my-works" id="myWorks">
+            <p class="title work-title">My Works</p>
+            <p class="sub-title" id="workCalligraphy">Calligraphy</p>
+            <p class="work-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum enim itaque
+                accusamus dolores
+                voluptate quidem a, ea corporis. Velit, excepturi.</p>
+            <div class="work-grid">
+                <img src="/img/calligraphy/featured.jpg" alt="featured">
+                <img src="/img/calligraphy/calligraphy1.jpg" alt="calligraphy1">
+                <img src="/img/calligraphy/calligraphy2.jpg" alt="calligraphy2">
+                <img src="/img/calligraphy/calligraphy3.jpg" alt="calligraphy3">
+                <img src="/img/calligraphy/calligraphy4.jpg" alt="calligraphy4">
+                <img src="/img/calligraphy/calligraphy5.jpg" alt="calligraphy5">
+                <img src="/img/calligraphy/calligraphy6.jpg" alt="calligraphy6">
+                <img src="/img/calligraphy/calligraphy7.jpg" alt="calligraphy7">
+            </div>
 
+            <p class="sub-title mt-5" id="workWatercolor">Watercolor Painting</p>
+            <p class="work-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore modi minima quibusdam
+                sapiente reiciendis error eveniet obcaecati est quisquam explicabo! Reprehenderit eaque consequuntur
+                consectetur iusto!</p>
+            <div class="work-grid">
+                <img src="/img/watercolor/featured.jpg" alt="featured">
+                <img src="/img/watercolor/watercolor1.jpg" alt="watercolor1">
+                <!-- <img src="/img/watercolor/watercolor2.jpg" alt="watercolor2">
+                <img src="/img/watercolor/watercolor3.jpg" alt="watercolor3">
+                <img src="/img/watercolor/watercolor4.jpg" alt="watercolor4"> -->
+            </div>
+
+            <p class="sub-title mt-5" id="workScrapbook">Scrapbook Making</p>
+            <p class="work-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ad quisquam eos fuga?
+                Autem, animi!</p>
+            <div class="work-grid">
+                <img src="/img/scrapbook/featured.jpg" alt="featured">
+                <img src="/img/scrapbook/scrapbook1.jpg" alt="scrapbook1">
+                <!-- <img src="/img/scrapbook/scrapbook2.jpg" alt="scrapbook2">
+                <img src="/img/scrapbook/scrapbook3.jpg" alt="scrapbook3">
+                <img src="/img/scrapbook/scrapbook4.jpg" alt="scrapbook4">
+                <img src="/img/scrapbook/scrapbook5.jpg" alt="scrapbook5"> -->
+            </div>
+
+            <p class="sub-title mt-5" id="workArtcraft">Other Arts and Crafts</p>
+            <p class="work-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem illum ut vel? Eligendi
+                harum provident molestiae accusamus.</p>
+            <div class="work-grid">
+                <img src="/img/artcraft/featured.jpg" alt="featured">
+                <img src="/img/artcraft/artcraft1.jpg" alt="artcraft1">
+                <!-- <img src="/img/artcraft/artcraft2.jpg" alt="artcraft2">
+                <img src="/img/artcraft/artcraft3.jpg" alt="artcraft3">
+                <img src="/img/artcraft/artcraft4.jpg" alt="artcraft4">
+                <img src="/img/artcraft/artcraft5.jpg" alt="artcraft5"> -->
+            </div>
         </section>
         <section class="contact-me" id="contactMe">
 
