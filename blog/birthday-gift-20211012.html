@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5a62622bfc.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../js/index.js"></script>
+    <title>Vanessa Profile</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        p{
+            margin: 10px 0;
+            width: 100%;
+        }
+        .blog-subcontent{
+            width: 100%;
+            border: 1px solid #fb3f79;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .blog-subcontent div{
+            transition: all 0.5s;
+            padding: 0 20px 20px;
+        }
+        .blog-subcontent .blog-subcontent-hidden{
+            display: none;
+        }
+        .blog-subcontent .blog-subcontent-title{
+            font-weight: bold;
+            font-size: large;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            text-align: center;
+            padding: 20px 10px;
+        }
+    </style>
+    <script>
+        function myReadyPage(){
+            const toggleClassName = "blog-subcontent-hidden";
+            const subContentTitle = document.querySelectorAll(".blog-subcontent-title");
+            subContentTitle.forEach(e => {
+                e.addEventListener("click", () => {
+                    const dataFor = e.dataset.for;
+                    document.querySelector(dataFor).classList.toggle(toggleClassName);
+                });
+            });
+        }
+    </script>
+</head>
+
+<body onload="myReadyPage()">
+    <header class="page-header" id="pageHeader">
+        <div class="brand">
+            <a href="#" class="brand-name">Vanessa Blog: Special Edition</a>
+        </div>
+    </header>
+    <section id="mainBlog">
+        <div class="row" style="margin: auto; width:80%">
+            <p>To my baby kong dearest, Vanessa Mae Bobadilla,</p>
+            <p>Ilang taon na ish baby yan? ish three? parin? &#128514; Happy birthday baby ko hihihi.</p>
+            <p>Alam kong hindi ko masasabi to, in person, nang tuloy tuloy kaya ittype ko nalang. Gagawa ako ng version ko ng nareceive kong gift from you. Gagawa ako ng 3 letters kasi dalawang itlog isang hotdog.</p>
+
+            <div class="blog-subcontent">
+                <div class="blog-subcontent-title" data-for="#hiddenSorry">Sorry</div>
+                <div class="blog-subcontent-hidden" id="hiddenSorry">
+                    <p>It has been almost 3 years sa pagtitiis sa akin. I know and acknowledge my mistakes. Di ko na ienumerate kasi ayaw ko namang mabadtrip ka sa araw na dapat masaya ka. Alam na natin parehas yun. Pagpasensyahan mo na rin ako sa asal ko kapag nababalikan yung mga yun. I have no excuse. Minsan talaga may topak din ako. I'm still trying to surpass my limits (maka black clover reference lang). To keep my cool in times na mainit yung sitwasyon natin. Gusto ko malaman mo na kailan man hindi kita away. Hindi ako nagkeep ng hard feelings towards you. Bati kita lagi. Yakap mo lang ako at lagi ko yun tatanggapin.</p>
+                    <p>Another thing, sorry kasi matagal ako. In everything and you know... &#128141;. Pero I am assuring you na makakarating din tayo dun. Slow and steady. <del>Mabilis kasi ako labasan.</del></p>
+                </div>
+            </div>
+
+            <div class="blog-subcontent">
+                <div class="blog-subcontent-title" data-for="#hiddenThankYou">Thank You</div>
+                <div class="blog-subcontent-hidden" id="hiddenThankYou">
+                    <p>
+                        Salamat sa mga<br>
+                        Kaligayahan<br>
+                        Kaligayah<br>
+                        Kalig<br>
+                        Kal<br>
+                        K<br>
+                        Ka<br>
+                        Kan<br>
+                        <del>Kant</del> *yamete kudasai*
+                    </p>
+                    <p>
+                        Pero seryoso, thank you for...<br>
+                        ... accepting me<br>
+                        ... supporting me<br>
+                        ... helping me kahit di mo alam gagawin<br>
+                        ... getting me breakfast, lunch, and dinner<br>
+                        ... making me laugh<br>
+                        ... dancing with me insanely<br>
+                        ... sharing hobbies with me<br>
+                        Kaya ko pang magtuloy tuloy sa paglista pero to summarize this, thank you for being you and for loving me.
+                    </p>
+                    <p>Thank you for your 24 years of existing.</p>
+                </div>
+            </div>
+            
+            <div class="blog-subcontent">
+                <div class="blog-subcontent-title" data-for="#hiddenILoveYou">I Love You</div>
+                <div class="blog-subcontent-hidden" id="hiddenILoveYou">
+                    <p>Yung version mo is 'I Miss You' yung isang letter. Well, binago ko to 'I Love You' kasi parang hindi naman ganun kaapplicable katulad ng sitwasyon natin dati sobrang dalang magkita. Tho while I'm writing this letter, I still miss you. Di bale, konting time lang naman.</p>
+                    <p>Hindi ko talaga alam ilalagay dito sa huling letter kasi I think nasabi ko naman na lahat ng gusto kong sabihin in the 1st letter. Habaan ko nalang parang essay sa school tapos kunyare LSM &#128514; Baka itong effort ko ay may plus points ako sa puso mo. Boom keleg ang utong.</p>
+                    <p>First, let's talk about future. According to my plan, magreresign ako before the year ends. Alam kong mahal mo parin ako kapag nawalan ako ng trabaho. Bawal tumanggi, empleyado kita &#128514; Tapos kung ibigay ni Papa Jihoz, makakuha na rin ako ng sarili nating place before the year ends. Hindi pa ganun kaconcrete ang plan pero I hope you'll stay with me hanggang mangyari yun. Tapos bakasyon tayo sa province nyo. Alam kong miss mo na sila. Ano kaya iaasar sakin ng lola mo? At least hindi nano/pandak &#128514; After these, start tayo ng business. Kahit ano basta makakaraos tayo sa mga bayarin and enough para makatulong tayo sa family. Then kapag stable na ang lahat, it's time para sa new member ng bahay. Plano pa ba to o pangarap? &#128514;</p>
+                    <p>Now let's talk about you. Bakit ang ganda, cute, sexy mo at the same time? Bawal yan. Tapos kapag umiiyak ka, di ko alam mararamdaman kasi minsan ang adorable mo. ish wawa ish baby yan. Hindi ko tinotolerate yung pagiyak mo ha &#128514; Tapos kapag nakikipaglaro ka ng sakitan ng katawan, bakit bawal ako gumanti? Bakit ish you only? &#128514; Buti nalang 3 years old ka palang, protektado ka pa ng batas in child abuse. Despite of mga pangmmicro mong kurot/kagat/suntok, I still adore you. Para kitang little monster &#128514; Tapos dimunyo kapag... hmm hmm hmm. Hay miss na kita habang niccompose ko to.</p>
+                    <p>Ngayon naman let's talk about us. Wag ka magsasawa sakin baby ha. Kasi walang masyadong kaganapan sa buhay ko. Ikaw lang. I'm not social, ikaw lang halos. I am not sporty, sayo lang &#128514; I don't care in almost everything, satin lang. Taena upon thinking about this, narealize ko na ikaw na yung buhay ko. GG &#128514;</p>
+                    <p>Kaya ko pa dumada dito pero almost no time na. Siguro, to end this letter, sasabihin ko nalang ito; I am and will forever hold on sa mga promise natin.</p>
+                </div>
+            </div>
+            <p>Happy birthday baby ko!!!</p>
+        </div>
+    </section>
+</body>
+</html>
